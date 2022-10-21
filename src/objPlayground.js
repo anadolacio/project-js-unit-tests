@@ -35,17 +35,18 @@
 */
 
 const calculator = (number1, number2) => {
-  const resultSum = number1 + number1;
+  const resultSum = number1 + number2;
   const resultMult = number1 * number2;
-  const resultDiv = Math.ceil(number1 / number2);
+  const resultDiv = Math.floor(number1 / number2);
   const resultSub = number1 - number2;
-
+   
   return { sum: resultSum, mult: resultMult, div: resultDiv, sub: resultSub };
 };
 
 const arrayGenerator = (type, object) => {
-  // object = calculator();
-  // if (type === key) => Object.keys(object)
+  if (type === 'keys') { return Object.keys(object); } 
+  if (type === 'values') { return Object.values(object); } 
+  if (type === 'entries') { return Object.entries(object); } 
 };
 
 module.exports = { calculator, arrayGenerator };
